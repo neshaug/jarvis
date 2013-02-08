@@ -1,0 +1,33 @@
+$background-color:  #47bbb3;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);;
+$moreinfo-color:    rgba(255, 255, 255, 0.7);;
+
+.widget-yr {
+
+  background-color: $background-color;
+
+  .title {
+    color: $title-color;
+  }
+
+  .value {
+    color: $value-color;
+  }
+
+  .desc {
+    font-weight: 500;
+    font-size: 30px;
+    color: $value-color;
+  }
+
+  .wind {
+    font-size: 20px;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+}
