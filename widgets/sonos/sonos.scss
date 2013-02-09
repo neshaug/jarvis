@@ -1,7 +1,7 @@
-$background-color:  #ec663c;
-$title-color:       #fff;
-
-$artist-color:       rgba(255, 255, 255, 0.7);;
+$background-color: #ec663c;
+$title-color: #fff;
+$artist-color: rgba(255, 255, 255, 0.7);;
+$duration-color: rgba(255, 255, 255, 0.7);
 
 .widget-sonos {
 
@@ -12,7 +12,7 @@ $artist-color:       rgba(255, 255, 255, 0.7);;
   }
 
   .title {
-    font-size: 60px;
+    font-size: 55px;
     color: $title-color;
   }
 
@@ -22,11 +22,12 @@ $artist-color:       rgba(255, 255, 255, 0.7);;
   }
 
   .duration {
-    font-size: 15px;
+    font-size: 18px;
+    color: $duration-color;
   }
 
   .updated-at {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.5);
   }
 
 }
