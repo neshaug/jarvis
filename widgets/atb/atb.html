@@ -1,6 +1,7 @@
 <h1 class="title" data-bind="first.destination"></h1>
 <h2 data-bind="first.hour | append ':' | append first.minute"></h2>
-<p class="remaining" data-bind="first.remaining | prepend 'om ' | append ' minutter'"></p>
+<p class="remaining" data-showif="first.remaining" data-bind="first.remaining | prepend 'om ' | append ' minutter'"></p>
+<p class="remaining" data-hideif="first.remaining">LØP!</p>
 
 <ul class="list-nostyle">
   <li data-foreach-item="rest">
