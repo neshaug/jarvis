@@ -1,0 +1,12 @@
+<h1 class="title" data-bind="first.destination"></h1>
+<h2 data-bind="first.hour | append ':' | append first.minute"></h2>
+<p class="remaining" data-bind="first.remaining | prepend 'om ' | append ' minutter'"></p>
+
+<ul class="list-nostyle">
+  <li data-foreach-item="rest">
+    <span class="label" data-bind="item.destination"></span>
+    <span class="value" data-bind="item.hour | append ':' | append item.minute"></span>
+  </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
