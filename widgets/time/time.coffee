@@ -11,11 +11,10 @@ class Dashing.Time extends Dashing.Widget
     s = today.getSeconds()
     h = @formatTime(h)
     m = @formatTime(m)
-    s = @formatTime(s)
     y = today.getFullYear()
     mo = @formatTime(today.getMonth())
     d = @formatTime(today.getDay())
-    @set('time', h + ":" + m + ":" + s)
+    @set('time', h + ":" + m)
     @set('date', y + '-' + mo + '-' + d)
 
   formatTime: (i) ->
