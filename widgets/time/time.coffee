@@ -13,12 +13,12 @@ class Dashing.Time extends Dashing.Widget
     m = @formatTime(m)
     y = today.getFullYear()
     @set('time', h + ":" + m)
-    @set('date', today.getDay() + ". " + @getMonthName(today) + " " + y)
+    @set('date', today.getDate() + ". " + @getMonthName(today) + " " + y)
     @set('day', @getDayName(today))
 
   getDayName: (date) =>
-    ['mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag',
-      'søndag'][date.getDay() - 1]
+    ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag',
+      'lørdag'][date.getDay()]
 
   getMonthName: (date) =>
     ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august',
