@@ -1,8 +1,8 @@
 require 'net/ping'
 require 'yaml'
 
-CONFIG = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
-DEVICES = CONFIG['uptime']['devices']
+UPTIME_CONFIG = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
+DEVICES = UPTIME_CONFIG['uptime']['devices']
 
 PING = Net::Ping::External.new
 PING.timeout = 1

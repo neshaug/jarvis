@@ -2,11 +2,10 @@ require 'nokogiri'
 require 'open-uri'
 require 'yaml'
 
-CONFIG = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
-URL = CONFIG['yr']['url']
+YR_CONFIG = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
 
 SCHEDULER.every '15m', :first_in => 0 do |job|
-  doc = Nokogiri::XML(open(URL))
+  doc = Nokogiri::XML(open(YR_CONFIG['yr']['url']))
   tabular = doc.xpath('/weatherdata/forecast/tabular/time[1]')
   windSpeed = tabular.xpath('windSpeed')
   data = {
