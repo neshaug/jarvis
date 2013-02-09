@@ -1,7 +1,22 @@
+# URL to Yr XML data
 yr:
   url: http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim/varsel.xml
 
+# Label is the label displayed in the widget. Host can be a hostname or an IP
+# address. The uptime job will send 1 ICMP packet to the given host, with a 1
+# second timeout
 uptime:
   devices:
     - label: Router
       host: 10.0.0.1
+    - label: Computer A
+      host: 10.0.0.10
+    - label: Computer B
+      host: 10.0.0.10
+
+
+# Replace yourLocationId with your closest locationId and yourApiKey with your
+# issued API key.
+# See http://wiki.busbuddy.no/doku.php for API docs
+atb:
+  url: http://api.busbuddy.no/api/1.4.4/departures/yourLocationId?apiKey=yourApiKey
