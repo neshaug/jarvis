@@ -1,0 +1,17 @@
+<h1 class="header" data-bind="title"></h1>
+
+<ul class="list-nostyle">
+  <li data-foreach-item="showsTop">
+    <span class="label" data-bind="item.name | truncate 18"></span>
+    <span class="value" data-bind="item.season | append 'x' | append item.episode"></span>
+  </li>
+</ul>
+<hr style="border: 0; height: 1px; background-color: rgba(255, 255, 255, 0.7); width: 90%">
+<ul class="list-nostyle">
+  <li data-foreach-item="moviesTop">
+    <span class="label" data-bind="item.title | truncate 18"></span>
+    <span class="value" data-bind="item.year | prepend '(' | append ')'"></span>
+  </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
