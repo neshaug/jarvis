@@ -24,10 +24,10 @@ SCHEDULER.every '30m', :first_in => 0 do |job|
     })
   end
 
-  doc_movies.xpath('/MediaContainer/Video').each do |show|
+  doc_movies.xpath('/MediaContainer/Video').each do |movie|
     data['movies'].push({
-      'title' => show.attr('title'),
-      'year' => show.attr('year')
+      'title' => movie.attr('title'),
+      'year' => movie.attr('year')
     })
   end
 
