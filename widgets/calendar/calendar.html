@@ -1,0 +1,10 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul class="list-nostyle">
+  <li data-foreach-item="upcoming">
+    <span class="label" data-bind="item.summary | truncate 18"></span>
+    <span class="value" data-bind="item.start"></span>
+  </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
