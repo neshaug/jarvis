@@ -5,7 +5,7 @@ class Dashing.Calendar extends Dashing.Widget
   onData: (data) ->
 
   @accessor 'upcoming', ->
-    @get('events').slice 0, 8
+    @get('events').slice 0, 4
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
