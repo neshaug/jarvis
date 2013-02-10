@@ -1,4 +1,4 @@
-<h1 class="artist" data-bind="artist"></h1>
-<h2 class="title" data-bind="title"></h2>
-<p class="album" data-bind="album"></p>
-<p class="updated-at" data-bind="current_position | append ' / ' | append track_duration"></p>
+<h1 class="artist" data-bind="np.artist"></h1>
+<h2 class="title" data-bind="np.title | truncate 36"></h2>
+<p class="album" data-bind="np.album"></p>
+<p class="updated-at" data-bind="name | append ': ' | append np.current_position | append ' / ' | append np.track_duration"></p>
