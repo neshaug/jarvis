@@ -11,7 +11,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   response = Net::HTTP.get_response(ATB_URI)
 
   body = response.body
-  if body.length > 0
+  if response.code == '200' and body.length > 0
     data = JSON.parse(body)
     data['departures'].each do |departure|
       time = Time.parse(departure['registeredDepartureTime'].split('T').last)
