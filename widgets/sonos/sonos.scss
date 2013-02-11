@@ -7,17 +7,18 @@ $duration-color: rgba(255, 255, 255, 0.7);
 
   background-color: $background-color;
 
-  .artist {
+  .artist, .room {
     color: $artist-color;
   }
 
   .title {
-    font-size: 40px;
+    font-size: 30px;
     color: $title-color;
   }
 
   .album {
     color: $artist-color;
+    font-style: italic;
   }
 
   .duration {
