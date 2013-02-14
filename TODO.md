@@ -4,7 +4,6 @@ Widgets
 * TV show airtimes (TVRage?)
 * Upcoming BluRay releases
 * Upcoming album releases
-* Highlight todays event, if any
 
 Other
 =====
