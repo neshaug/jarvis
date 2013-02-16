@@ -28,6 +28,10 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     list-style: none;
   }
 
+  .label, .value {
+    font-size: 22px;
+  }
+
   .label {
     color: $label-color;
   }
