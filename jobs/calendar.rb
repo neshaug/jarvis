@@ -11,7 +11,7 @@ client.authorization.refresh_token = oauth_yaml['calendar']['refresh_token']
 client.authorization.access_token = oauth_yaml['calendar']['access_token']
 
 if client.authorization.refresh_token && client.authorization.expired?
-    client.authorization.fetch_access_token!
+  client.authorization.fetch_access_token!
 end
 
 service = client.discovered_api('calendar', 'v3')

@@ -6,3 +6,6 @@ class Dashing.Yr extends Dashing.Widget
       hours = timestamp.getHours()
       minutes = ('0' + timestamp.getMinutes()).slice(-2)
       "Sist oppdatert #{hours}:#{minutes}"
+
+  @accessor 'windDirection', ->
+    @get('wind').direction.toLowerCase()

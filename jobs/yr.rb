@@ -16,7 +16,8 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
     'description' => tabular.xpath('symbol').attr('name').value,
     'wind' => {
       'speed' => windSpeed.attr('mps').value,
-      'description' => windSpeed.attr('name').value
+      'description' => windSpeed.attr('name').value,
+      'direction' => tabular.xpath('windDirection').attr('name').value
     }
   }
   send_event('yr', data)
