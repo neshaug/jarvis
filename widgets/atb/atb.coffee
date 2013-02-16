@@ -1,18 +1,16 @@
 class Dashing.Atb extends Dashing.Widget
 
-  ready: ->
-
-  onData: (data) ->
-
   @accessor 'first', ->
-    @get('departures')[0]
+    departures = @get('departures')
+    if departures and departures.length > 0 then departures[0] else null
 
   @accessor 'rest', ->
-    @get('departures').slice 1, 4
+    departures = @get('departures')
+    if departures then departures.slice 1, 4 else []
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
       timestamp = new Date(updatedAt * 1000)
       hours = timestamp.getHours()
-      minutes = ("0" + timestamp.getMinutes()).slice(-2)
+      minutes = ('0' + timestamp.getMinutes()).slice(-2)
       "Sist oppdatert #{hours}:#{minutes}"
