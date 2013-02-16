@@ -9,7 +9,7 @@ class Dashing.Atb extends Dashing.Widget
     if departures then departures.slice 1, 4 else []
 
   @accessor 'remainingMessage', ->
-    remaining = @get('first').remaining
+    remaining = @get('first')?.remaining or 0
     unit = if remaining > 1 then 'minutter' else 'minutt'
     "om #{remaining} #{unit}"
 
