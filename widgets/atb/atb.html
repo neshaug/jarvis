@@ -1,7 +1,7 @@
 <h1 class="title" data-showif="first" data-bind="first.line | append ' ' | append first.destination"></h1>
 <h2 data-showif="first" data-bind="first.hour | append ':' | append first.minute"></h2>
 <div data-showif="first">
-  <p class="remaining" data-showif="first.remaining" data-bind="first.remaining | prepend 'om ' | append ' minutter'"></p>
+  <p class="remaining" data-showif="first.remaining" data-bind="remainingMessage"></p>
   <p class="remaining" data-hideif="first.remaining">LØP!</p>
 </div>
 <p class="remaining" data-hideif="first">Ingen bussruter tilgjengelig</p>

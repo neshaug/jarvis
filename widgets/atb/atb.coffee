@@ -8,6 +8,11 @@ class Dashing.Atb extends Dashing.Widget
     departures = @get('departures')
     if departures then departures.slice 1, 4 else []
 
+  @accessor 'remainingMessage', ->
+    remaining = @get('first').remaining
+    unit = if remaining > 1 then 'minutter' else 'minutt'
+    "om #{remaining} #{unit}"
+
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
       timestamp = new Date(updatedAt * 1000)
