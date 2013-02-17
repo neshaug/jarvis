@@ -6,7 +6,8 @@ class Dashing.Atb extends Dashing.Widget
 
   @accessor 'rest', ->
     departures = @get('departures')
-    if departures then departures.slice 1, 5 else []
+    item_count = Math.ceil(Dashing.widget_base_dimensions[1] / 100)
+    if departures then departures.slice 1, item_count else []
 
   @accessor 'remainingMessage', ->
     remaining = @get('first')?.remaining or 0

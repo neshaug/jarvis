@@ -2,7 +2,8 @@ class Dashing.Calendar extends Dashing.Widget
 
   @accessor 'upcoming', ->
     events = @get('events')
-    if events then events.slice 0, 5 else []
+    item_count = Math.ceil(Dashing.widget_base_dimensions[1] / 100) + 1
+    if events then events.slice 0, item_count else []
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')
