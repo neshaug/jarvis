@@ -2,7 +2,7 @@ class Dashing.Calendar extends Dashing.Widget
 
   @accessor 'upcoming', ->
     events = @get('events')
-    if events then events.slice 0, 4 else []
+    if events then events.slice 0, 5 else []
 
   @accessor 'updatedAtMessage', ->
     if updatedAt = @get('updatedAt')

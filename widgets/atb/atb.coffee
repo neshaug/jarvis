@@ -6,7 +6,7 @@ class Dashing.Atb extends Dashing.Widget
 
   @accessor 'rest', ->
     departures = @get('departures')
-    if departures then departures.slice 1, 4 else []
+    if departures then departures.slice 1, 5 else []
 
   @accessor 'remainingMessage', ->
     remaining = @get('first')?.remaining or 0
