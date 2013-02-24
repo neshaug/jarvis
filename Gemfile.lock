@@ -4,7 +4,7 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    addressable (2.3.2)
+    addressable (2.3.3)
     akami (1.2.0)
       gyoku (>= 0.4.0)
       nokogiri (>= 1.4.0)
@@ -13,7 +13,7 @@ GEM
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
     backports (2.8.2)
-    builder (3.1.4)
+    builder (3.2.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -66,7 +66,7 @@ GEM
       rack (>= 1.0)
     rufus-scheduler (2.0.17)
       tzinfo (>= 0.3.23)
-    sass (3.2.5)
+    sass (3.2.6)
     savon (2.0.3)
       akami (~> 1.2.0)
       builder (>= 2.1.2)
