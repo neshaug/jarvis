@@ -25,20 +25,22 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
   })
 
   data = {}
-  first_event = result.data.items.first
-  if first_event.start.dateTime.to_date == Date.today
+  first = result.data.items.first
+  first_date = (first.start['date'] or first.start['dateTime']).to_datetime
+  if first_date.to_date == Date.today
     data['today'] = {
-      'summary' => first_event.summary,
-      'start' => first_event.start.dateTime.strftime('%H:%M')
+      'summary' => first.summary,
+      'start' => first_date.strftime('%H:%M')
     }
   end
 
   data['events'] = []
   start = data['today'].nil? ? 0 : 1
   result.data.items[start..-1].each do |event|
+    date = (event.start['date'] or event.start['dateTime']).to_datetime
     data['events'].push({
       'summary' => event.summary,
-      'start' => event.start.dateTime.strftime('%d.%m %H:%M')
+      'start' => date.strftime('%d.%m %H:%M')
     })
   end
 
