@@ -16,6 +16,38 @@ end
 
 service = client.discovered_api('calendar', 'v3')
 
+def find_first(items)
+  if items.length == 0
+    return nil
+  end
+
+  event = items.first
+  date = (event.start['date'] or event.start['dateTime']).to_datetime
+  if date.to_date != Date.today
+    return nil
+  end
+
+  { 'summary' => event.summary, 'start' => date.strftime('%H:%M') }
+end
+
+def find_events(today, items)
+  if items.length == 0
+    return []
+  end
+
+  events = []
+  start = today.nil? ? 0 : 1
+  items[start..-1].each do |event|
+    date = (event.start['date'] or event.start['dateTime']).to_datetime
+    events.push({
+      'summary' => event.summary,
+      'start' => date.strftime('%d.%m %H:%M')
+    })
+  end
+
+  events
+end
+
 SCHEDULER.every '15m', :first_in => 0 do |job|
   result = client.execute(:api_method => service.events.list, :parameters => {
     'calendarId' => 'primary',
@@ -24,27 +56,14 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
     'timeMin' => Time.now.strftime('%FT%T.%LZ')
   })
 
-  data = {}
-  first = result.data.items.first
-  first_date = (first.start['date'] or first.start['dateTime']).to_datetime
-  if first_date.to_date == Date.today
-    data['today'] = {
-      'summary' => first.summary,
-      'start' => first_date.strftime('%H:%M')
-    }
-  else
-    data['today'] = nil
-  end
+  items = result.data.items
+  today = find_first(items)
+  events = find_events(today, items)
 
-  data['events'] = []
-  start = data['today'].nil? ? 0 : 1
-  result.data.items[start..-1].each do |event|
-    date = (event.start['date'] or event.start['dateTime']).to_datetime
-    data['events'].push({
-      'summary' => event.summary,
-      'start' => date.strftime('%d.%m %H:%M')
-    })
-  end
+  data = {
+    'today' => today,
+    'events' => events
+  }
 
   send_event('calendar', data)
 end
