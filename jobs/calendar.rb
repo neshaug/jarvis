@@ -32,6 +32,8 @@ SCHEDULER.every '15m', :first_in => 0 do |job|
       'summary' => first.summary,
       'start' => first_date.strftime('%H:%M')
     }
+  else
+    data['today'] = nil
   end
 
   data['events'] = []
