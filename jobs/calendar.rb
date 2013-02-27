@@ -3,7 +3,10 @@ require 'google/api_client'
 require 'yaml'
 
 oauth_yaml = YAML.load_file(File.join(File.dirname(__FILE__), 'config.yml'))
-client = Google::APIClient.new
+client = Google::APIClient.new(
+  :application_name => 'Dashboard',
+  :application_version => '0.1'
+)
 client.authorization.client_id = oauth_yaml['calendar']['client_id']
 client.authorization.client_secret = oauth_yaml['calendar']['client_secret']
 client.authorization.scope = oauth_yaml['calendar']['scope']
