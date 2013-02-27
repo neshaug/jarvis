@@ -1,4 +1,4 @@
-$background-color:  #ff7729;
+$background-color:  #99943e;
 $value-color:       #fff;
 
 $title-color:       rgba(255, 255, 255, 0.7);
@@ -29,11 +29,11 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .label, .value {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .label {
-    color: $label-color;
+    color: $value-color;
   }
 
   .value {

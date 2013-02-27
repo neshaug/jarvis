@@ -2,12 +2,12 @@ class Dashing.Plex extends Dashing.Widget
 
   @accessor 'showsTop', ->
     shows = @get('shows')
-    item_count = Math.ceil Dashing.widget_base_dimensions[1] / 40
+    item_count = Math.ceil Dashing.widget_base_dimensions[1] / 100
     if shows then shows.slice 0, item_count else []
 
   @accessor 'moviesTop', ->
     movies = @get('movies')
-    item_count = Math.ceil Dashing.widget_base_dimensions[1] / 40
+    item_count = Math.ceil Dashing.widget_base_dimensions[1] / 100
     if movies then movies.slice 0, item_count else []
 
   @accessor 'updatedAtMessage', ->
