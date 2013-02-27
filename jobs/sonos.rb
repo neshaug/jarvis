@@ -1,5 +1,16 @@
 require 'sonos'
 
+module Sonos::Endpoint::AVTransport
+private
+  def transport_client
+    @transport_client ||= Savon.client(
+      endpoint: "http://#{self.ip}:#{Sonos::PORT}#{TRANSPORT_ENDPOINT}",
+      namespace: Sonos::NAMESPACE,
+      log: false
+    )
+  end
+end
+
 SONOS_DEVICE = Sonos::System.new.speakers.first
 
 SCHEDULER.every '10s', :first_in => 0 do |job|
