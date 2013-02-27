@@ -1,8 +1,5 @@
 class Dashing.Hackernews extends Dashing.Widget
 
-  onData: (data) ->
-    console.log data
-
   @accessor 'top', ->
     items = @get('items')
     item_count = Math.ceil(Dashing.widget_base_dimensions[1] / 50)
