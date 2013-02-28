@@ -15,7 +15,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   ul {
-    margin: 0 15px;
+    margin: 0 5px;
     text-align: left;
     color: $label-color;
   }
@@ -38,8 +38,6 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .value {
-    float: right;
-    margin-left: 12px;
     color: $value-color;
   }
 
