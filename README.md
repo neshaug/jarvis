@@ -21,3 +21,7 @@ Usage
 =====
 Use `dashing start` to start the server. Then point your browser to
 [http://localhost:3030/jarvis](http://localhost:3030/jarvis)
+
+Screenshot
+==========
+![Screenshot](https://github.com/martinp/jarvis/raw/master/public/jarvis.png)
