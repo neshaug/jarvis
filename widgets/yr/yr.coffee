@@ -8,4 +8,4 @@ class Dashing.Yr extends Dashing.Widget
       "Sist oppdatert #{hours}:#{minutes}"
 
   @accessor 'windDirection', ->
-    @get('wind').direction.toLowerCase()
+    @get('wind')?.direction.toLowerCase()
