@@ -13,29 +13,9 @@
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
       }
-      @-webkit-keyframes pulse {
-        from {
-          font-size: 70px;
-        }
-        to {
-          font-size: 80px;
-        }
-      }
       #countdown {
         color: #e7ad52;
         font-size: 70px;
-      }
-      .pulse {
-        -webkit-animation-name: pulse;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-direction: alternate;
-        -webkit-animation-duration: 0.5s;
-        -moz-animation-name: pulse;
-        -moz-animation-iteration-count: infinite;
-        -moz-animation-timing-function: ease-in-out;
-        -moz-animation-direction: alternate;
-        -moz-animation-duration: 0.5s;
       }
     </style>
   </head>
@@ -51,7 +31,6 @@
           el.text(time);
           if (time === 0) {
             window.clearInterval(interval);
-            el.addClass('pulse');
           }
           --time;
         }, 1000);
